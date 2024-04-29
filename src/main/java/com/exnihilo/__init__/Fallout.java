@@ -59,26 +59,26 @@ public class Fallout implements CommandLineRunner {
 
         // Création des utilisateurs
 
-        PersonDto person01 = personService.create(new PersonDto("TRAORE", "Thierry", "thierry.traore@exnihilo.com", ADMIN));
-        PersonDto person02 = personService.create(new PersonDto("TRAORE", "Arthur", "arthur.traore@exnihilo.com", USER));
-        PersonDto person03 = personService.create(new PersonDto("TRAORE", "Emmanuel", "emmanuel.traore@exnihilo.com", USER));
-        PersonDto person04 = personService.create(new PersonDto("TRAORE", "Kyle", "kyle.traore@exnihilo.com", USER));
-        PersonDto person05 = personService.create(new PersonDto("DURAND", "Alice", "alice.durand@exnihilo.com", ADMIN));
-        PersonDto person06 = personService.create(new PersonDto("DUPONT", "Lucas", "lucas.dupont@exnihilo.com", USER));
-        PersonDto person07 = personService.create(new PersonDto("MARTIN", "Camille", "camille.martin@exnihilo.com", USER));
-        PersonDto person08 = personService.create(new PersonDto("THOMAS", "Manon", "manon.thomas@exnihilo.com", USER));
-        PersonDto person09 = personService.create(new PersonDto("ROBERT", "Alexandre", "alexandre.robert@exnihilo.com", USER));
-        PersonDto person10 = personService.create(new PersonDto("PETIT", "Clara", "clara.petit@exnihilo.com", USER));
-        PersonDto person11 = personService.create(new PersonDto("RICHARD", "Léo", "leo.richard@exnihilo.com", USER));
-        PersonDto person12 = personService.create(new PersonDto("DURAND", "Louise", "louise.durand@exnihilo.com", USER));
-        PersonDto person13 = personService.create(new PersonDto("DUPONT", "Hugo", "hugo.dupont@exnihilo.com", USER));
-        PersonDto person14 = personService.create(new PersonDto("MARTIN", "Jade", "jade.martin@exnihilo.com", USER));
-        PersonDto person15 = personService.create(new PersonDto("THOMAS", "Maxime", "maxime.thomas@exnihilo.com", USER));
-        PersonDto person16 = personService.create(new PersonDto("ROBERT", "Zoé", "zoe.robert@exnihilo.com", USER));
-        PersonDto person17 = personService.create(new PersonDto("PETIT", "Théo", "theo.petit@exnihilo.com", USER));
-        PersonDto person18 = personService.create(new PersonDto("RICHARD", "Manon", "manon.richard@exnihilo.com", USER));
-        PersonDto person19 = personService.create(new PersonDto("DURAND", "Emma", "emma.durand@exnihilo.com", USER));
-        PersonDto person20 = personService.create(new PersonDto("DUPONT", "Enzo", "enzo.dupont@exnihilo.com", USER));
+        PersonDto person01 = personService.create(new PersonDto("Thierry", "TRAORE", "thierry.traore@exnihilo.com", ADMIN));
+        PersonDto person02 = personService.create(new PersonDto("Arthur", "TRAORE", "arthur.traore@exnihilo.com", USER));
+        PersonDto person03 = personService.create(new PersonDto("Emmanuel", "TRAORE", "emmanuel.traore@exnihilo.com", USER));
+        PersonDto person04 = personService.create(new PersonDto("Kyle", "TRAORE", "kyle.traore@exnihilo.com", USER));
+        PersonDto person05 = personService.create(new PersonDto("Alice", "DURAND", "alice.durand@exnihilo.com", ADMIN));
+        PersonDto person06 = personService.create(new PersonDto("Lucas", "DUPONT", "lucas.dupont@exnihilo.com", USER));
+        PersonDto person07 = personService.create(new PersonDto("Camille", "MARTIN", "camille.martin@exnihilo.com", USER));
+        PersonDto person08 = personService.create(new PersonDto("Manon", "THOMAS", "manon.thomas@exnihilo.com", USER));
+        PersonDto person09 = personService.create(new PersonDto("Alexandre", "ROBERT", "alexandre.robert@exnihilo.com", USER));
+        PersonDto person10 = personService.create(new PersonDto("Clara", "PETIT", "clara.petit@exnihilo.com", USER));
+        PersonDto person11 = personService.create(new PersonDto("Léo", "RICHARD", "leo.richard@exnihilo.com", USER));
+        PersonDto person12 = personService.create(new PersonDto("Louise", "DURAND", "louise.durand@exnihilo.com", USER));
+        PersonDto person13 = personService.create(new PersonDto("Hugo", "DUPONT", "hugo.dupont@exnihilo.com", USER));
+        PersonDto person14 = personService.create(new PersonDto("Jade", "MARTIN", "jade.martin@exnihilo.com", USER));
+        PersonDto person15 = personService.create(new PersonDto("Maxime", "THOMAS", "maxime.thomas@exnihilo.com", USER));
+        PersonDto person16 = personService.create(new PersonDto("Zoé", "ROBERT", "zoe.robert@exnihilo.com", USER));
+        PersonDto person17 = personService.create(new PersonDto("Théo", "PETIT", "theo.petit@exnihilo.com", USER));
+        PersonDto person18 = personService.create(new PersonDto("Manon", "RICHARD", "manon.richard@exnihilo.com", USER));
+        PersonDto person19 = personService.create(new PersonDto("Emma", "DURAND", "emma.durand@exnihilo.com", USER));
+        PersonDto person20 = personService.create(new PersonDto("Enzo", "DUPONT", "enzo.dupont@exnihilo.com", USER));
 
         List<PersonDto> persons = Arrays.asList(
                 person01, person02, person03, person04, person05,
@@ -118,6 +118,7 @@ public class Fallout implements CommandLineRunner {
 
 
         // Création des affections
+
         List<AssignmentDto> assignments = new ArrayList<>();
         IntStream.range(0, 100).forEach(i -> {
             int personIndex = random.nextInt(persons.size());
@@ -132,6 +133,5 @@ public class Fallout implements CommandLineRunner {
         IntStream.range(0, 500).forEach(i ->
                 messageService.create(new MessageDto(assignments.get(i % assignments.size()).id(), "Message --> " + (i + 1) + " Lorem Ipsum Dolor Sit Amet !"))
         );
-
     }
 }
